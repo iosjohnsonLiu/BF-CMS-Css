@@ -1,0 +1,100 @@
+@mixin modal(){
+  text-align: center;
+  background-color: rgba(#000 , 0.5);
+  overflow-y: auto;
+  overflow-x: hidden;
+  font-size: 0;
+  > * {
+    font-size: $font-size-base;
+  }
+  &:before {
+    content: " ";
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+    width: 0;
+    visibility: hidden;
+  }
+  .modal-dialog {
+    text-align: left;
+    vertical-align: middle;
+    display: inline-block;
+    margin: 0;
+  }
+  .modal-content {
+
+  }
+  .modal-header {
+    @include border-top-radius(4px);
+    overflow: hidden;
+    padding: 8px;
+    .close{
+      float: right;
+      @include square(20px);
+      cursor:pointer;
+      background-color: transparent;
+      position: relative;
+      color: $brand-danger;
+      &::before,&::after{
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 10%;
+        bottom: 10%;
+        border-radius: 2px;
+        margin-left: -1px;
+        width: 0;
+        border: 1px solid;
+      }
+      &::before{
+         @include rotate(45deg);
+      }
+      &::after{
+        @include  rotate(-45deg);
+      }
+    }
+  }
+  .modal-body {
+    .form-group {
+      > .input-group, > fieldset > .input-group {
+        margin-top: 5px;
+        margin-bottom: 5px;
+      }
+    }
+  }
+  .modal-footer {
+    //background-color: $default-bg;
+    @include border-bottom-radius(4px);
+    overflow: hidden;
+    position: relative;
+    padding: 6px;
+    //.error-hint, .use-hint {
+    //  display: block;
+    //  text-align: left;
+    //  line-height: 20px;
+    //  font-size: 14px;
+    //}
+    //.error-hint {
+    //  color: $brand-danger;
+    //}
+    //.use-hint {
+    //  color: $brand-primary;
+    //}
+    .btn{
+      padding: 6px 8px;
+      font-size: 12px;
+      line-height: 12px;
+    }
+  }
+  .modal-title{
+    color: $theme-table-title-font-color;
+    font-size: $theme-table-title-font-size;
+    line-height: 20px;
+  }
+  .text-content{
+    text-align: left;
+    font-size: 12px;
+    line-height: 20px;
+    color: #db2c2c;
+  }
+}

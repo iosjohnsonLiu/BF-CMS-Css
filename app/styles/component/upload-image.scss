@@ -1,0 +1,218 @@
+//图片上传
+@mixin u-upload-image() {
+  border: 1px solid $table-border-color;
+  min-height: 260px;
+  @include displayFlex();
+  @include flexDirectionColumn();
+  .title-box {
+    position: relative;
+    border-bottom: 1px solid $table-border-color;
+    background-color: $theme-table-thead-color;
+    @include clearfix();
+    .btn-group {
+      float: right;
+      .btn {
+        margin: 0 3px;
+      }
+    }
+    .title {
+      padding: 0 12px;
+      color: $theme-table-title-font-color;
+      font-size: $theme-detail-title-size;
+      line-height: 32px;
+    }
+    //.upload-btn,
+    .select-btn {
+      display: inline-block;
+      font-family: $font-family-serif;
+      font-size: $font-size-h6;
+      line-height: 24px;
+      padding: 4px 8px;
+      cursor: pointer;
+      margin: 0;
+      color: $brand-primary;
+      &:hover {
+        color: lighten($brand-primary, 10%);
+      }
+    }
+
+    input[type="file"] {
+      display: none;
+    }
+  }
+  .error-hint {
+    font-size: $font-size-h5;
+    display: block;
+    line-height: $font-size-h4;
+    color: $brand-danger;
+    text-align: center;
+  }
+
+  .photo-box {
+    position: relative;
+    @include flex(1);
+    height: auto;
+    img {
+      @include max-square(100%);
+      @include square(auto);
+    }
+    .load-img{font-size: 36px;}
+  }
+}
+
+.u-upload-image {
+  @include u-upload-image();
+}
+
+.u-upload-image-list {
+  border: 1px solid $theme-table-border-color;
+  $radius-size: 4px;
+  margin-bottom: 10px;
+  .close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 50;
+    background-color: #000;
+    @include square(20px);
+    cursor: pointer;
+    color: #fff;
+    font-size: 18px;
+    &::before, &::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 10%;
+      bottom: 10%;
+      margin-left: -1px;
+      border-radius: 2px;
+      width: 0;
+      border: 1px solid;
+    }
+    &::before {
+      @include rotate(45deg);
+    }
+    &::after {
+      @include rotate(-45deg);
+    }
+  }
+  //.old-image-box,
+  .add-image-box {
+    > ul {
+      @include clearfix();
+      padding: 8px;
+      > li {
+        float: left;
+        @include square(120px);
+
+        background-color: #f0f0f0;
+        padding: 4px;
+        margin: 8px;
+        border: 1px solid #eee;
+        position: relative;
+        &.add-item {
+          cursor: pointer;
+          border: 2px dashed #c7e5eb;
+          background-color: transparent;
+          @include displayFlex();
+          @include justifyContentCenter();
+          @include alignItemsCenter();
+          &:hover {
+            .text {
+              color: #47a4b3;
+            }
+            border-color: #47a4b3;
+          }
+          .text {
+            line-height: 24px;
+            font-size: 14px;
+            color: #7e8a8c;
+            &::before {
+              //content: "\e046";
+              content: "\e046";
+              @include glyphicon();
+              font-size: 24px;
+              line-height: 24px;
+              vertical-align: middle;
+              top: -1px;
+              margin-right: 4px;
+            }
+          }
+          input[type="file"] {
+            display: none;
+          }
+          label {
+            cursor: pointer;
+            display: block;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+          }
+        }
+        .photo-box {
+          width: 100%;
+          height: 100%;
+        }
+        //.u-progress{
+        //  position: absolute;
+        //  bottom: 10px;
+        //  left: 0px;
+        //  right: 0px;
+        //  padding: 4px 8px;
+        //  .progress-number{
+        //    width: 100%;
+        //    text-align: center;
+        //  }
+        //}
+      }
+    }
+  }
+  > div + div {
+    .title-box {
+      border-top: 1px solid $theme-table-border-color;
+    }
+  }
+  .title-box {
+    position: relative;
+    border-bottom: 1px solid $table-border-color;
+    background-color: $theme-table-thead-color;
+    .title {
+      padding: 0 12px;
+      color: $theme-table-title-font-color;
+      font-size: $theme-detail-title-size;
+      line-height: 32px;
+    }
+  }
+  .photo-box {
+    position: relative;
+    height: auto;
+    img {
+      @include max-square(100%);
+      @include square(auto);
+    }
+    .load-img {
+      font-size: 18px;
+    }
+  }
+}
+
+.photo-box {
+  position: relative;
+  @include displayFlex();
+  @include justifyContentCenter();
+  @include alignItemsCenter();
+  img {
+    position: relative;
+    z-index: 10;
+  }
+  .u-load {
+    z-index: 1;
+  }
+  .image-box{
+    @include displayFlex();
+    @include justifyContentCenter();
+    @include alignItemsCenter();
+  }
+}

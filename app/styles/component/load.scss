@@ -1,0 +1,149 @@
+@-webkit-keyframes load{
+  from { @include opacity(0);}
+  to { @include opacity(1);}
+}
+
+@mixin load-animation($index){
+  $time:1.0s;
+  &::before{
+    @include  animation(load $time linear (($time/12) * ($index - 1)) infinite)
+  }
+  &::after{
+    @include  animation(load $time linear (($time/12) * ($index - 1 + 6)) infinite)
+  }
+}
+
+@mixin u-load(){
+  @include displayFlex();
+  @include justifyContentCenter();
+  @include alignItemsCenter();
+  $load-color:#fff;
+  .load-box{
+    position:relative;
+    text-align: center;
+  }
+  .load-img{
+    position: relative;
+    i{
+      font-size: inherit;
+      background-color: transparent;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      bottom: 0;
+      right: 50%;
+      &::before,&::after{
+        content: '';
+        height: 18%;
+        position: absolute;
+        left: 50%;
+        display: block;
+        border: 0.04em solid;
+        border-radius: 20px;
+      }
+      &::before{ bottom: 0;}
+      &::after{ top:0; }
+      &:nth-child(1){
+        @include rotate(0deg);
+        @include  load-animation(1);
+      }
+      &:nth-child(2){
+        @include rotate(30deg);
+        @include  load-animation(2);
+      }
+      &:nth-child(3){
+        @include rotate(60deg);
+        @include  load-animation(3);
+      }
+      &:nth-child(4){
+        @include rotate(90deg);
+        @include  load-animation(4);
+      }
+      &:nth-child(5){
+        @include rotate(120deg);
+        @include  load-animation(5);
+      }
+      &:nth-child(6){
+        @include rotate(150deg);
+        @include  load-animation(6);
+      }
+
+    }
+    @include square(2em);
+  }
+  .load-title{
+    color: $load-color;
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+  position: absolute;
+  top:0;left: 0;right: 0;bottom: 0;
+  z-index: $zindex-tooltip;
+  font-size: 12px;
+  //.load-img{
+  //  //@include square($img-size);
+  //}
+
+  &.overspread{
+    background-color: rgba(0, 0, 0, 0.40);
+    font-size: 32px;
+    position: absolute;
+    top:0;left: 0;right: 0;bottom: 0;
+    //z-index: $zindex-tooltip;
+    .load-img{
+      color: #fff;
+      background-color: rgba(0, 0, 0, 0.50);
+      border-radius: 0.3em;
+      border: 0.145em solid transparent;
+    }
+    .load-title{
+      font-size: 16px;
+    }
+  }
+
+  &.fixed{
+    font-size: 99px;
+    background-color: rgba(0, 0, 0, 0.40);
+    $img-size:10em;
+    position: fixed;
+    top:0;left: 0;right: 0;bottom: 0;
+    //z-index: $zindex-tooltip;
+    .load-img{
+      color: #fff;
+      border-radius: 0.3em;
+      border: 0.16em solid transparent;
+      background-color: rgba(0, 0, 0, 0.50);
+      //@include square($img-size);
+    }
+    .load-box{padding: 20px;  }
+    .load-title{font-size: 32px;}
+    .load-title.center{
+      position: absolute;
+      top:35%;
+      left:25%;
+      width: 50%;
+      height: 30%;
+      font-size: 24px;
+      @include displayFlex();
+      @include justifyContentCenter();
+      @include alignItemsCenter();
+    }
+  }
+
+}
+
+//<!--u-load fixed overspread  (fixed 全屏模式  overspread 弹出框模式)">-->
+//<div class="u-load fixed">
+//    <div class="load-box">
+//        <div class="load-img">
+//            <i></i>
+//            <i></i>
+//            <i></i>
+//            <i></i>
+//            <i></i>
+//            <i></i>
+//        </div>
+//        <!--load-title 加上 center 在fixed下字体显示在加载动画中间-->
+//        <div class="load-title center">加载中..</div>
+//    </div>
+//</div>

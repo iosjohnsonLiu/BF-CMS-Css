@@ -1,0 +1,125 @@
+.u-meum-list{
+  $bg-color:#F5F6FA;
+  $border:1px solid $theme-table-border-color;
+  $p-b:1px solid #e9e9e9;
+  border:$border;
+  background-color: #fff;
+  @include displayFlex();
+  @include flexWrapWrap();
+  .info-box{
+    @include flex(1);
+    min-width: 240px;
+    margin: 4px;
+    .title{
+      border-right: $p-b;
+      min-width: 80px;
+      font-size: 14px;
+      @include displayFlex();
+      @include justifyContentCenter();
+      @include alignItemsCenter();
+    }
+    .subcoat{
+      background-color: $bg-color;
+      @include displayFlex();
+      position: relative;
+      border: $p-b;
+    }
+  }
+  .meum-list{
+    min-height: 80px;
+    @include displayFlex();
+    @include flexWrapWrap();
+    @include alignContentFlexStart();
+    >li{
+      text-align: center;
+      $li-h:25px;
+      position: relative;
+      margin: 4px;
+      padding:0  ($li-h / 3);
+      border-radius: ($li-h / 2);
+      background-color: #fff;
+      border: 1px solid darken($bg-color,10%);
+      height: $li-h + 2px;
+      color: #666;
+      @include displayFlex();
+      @include alignItemsCenter();
+      @include justifyContentCenter();
+      .name,
+      .delete{
+        font-size: 12px;
+        display: inline-block;
+      }
+      .delete{
+        border-radius: 50%;
+        color:lighten($brand-danger,10%);
+        cursor: pointer;
+        &:hover{color:darken($brand-danger,10%);}
+        &:before{
+          @include glyphicon();
+          content: '\e088';
+          font-size: 16px;
+          left: 4px;
+        }
+      }
+    }
+  }
+  .u-table{
+    background-color: #fff;
+    .table{
+      > thead,
+      > tbody,
+      > tfoot {
+        > tr {
+          > th,
+          > td {
+            padding: 4px;
+            height: 30px;
+          }
+        }
+      }
+    };
+    .search-box{
+      position: relative;
+      input{
+        float: none;
+        border-style: none;
+        border-radius:0;
+        padding-right: 40px;
+        font-size: 12px;
+        &:focus{
+          border-style: solid;
+        }
+      }
+      .btn-search{
+        cursor: pointer;
+        color: #555;
+        @include displayFlex();
+        @include justifyContentCenter();
+        @include alignItemsCenter();
+        width: 40px;
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        font-size: 14px;
+        z-index: 10;
+        text-align: center;
+        &:hover{
+          color: $brand-primary;
+        }
+        &:before{
+          @include glyphicon();
+          content: "\e003";
+        }
+      }
+    }
+  }
+  .input-box{
+    border: $p-b;
+    margin: 4px;
+    @include flex(1); min-width: 300px;
+    .u-table{height: 100%;
+      table{border-style: none;border-top-style: solid;}
+    }
+  }
+}

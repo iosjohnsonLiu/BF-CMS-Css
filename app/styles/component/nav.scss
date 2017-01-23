@@ -1,0 +1,213 @@
+$g-topnav-h: 50px;
+$g-mainnav-w: 200px;
+$zindex-navbar: 1000;
+
+@mixin u-mainnav() {
+  $li-h: 40px;
+  height: 100%;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  //文字前面留空隙
+  $bg-1-u: #2E363F;
+  $bg-2-u: #242633;
+  $bg-3-u: #242633;
+  $pgl-1-a: 20px;
+  $pgl-2-a: 30px;
+  $pgl-3-a: 40px;
+  $brt-color: #2a2d3e;
+  $text-color: #939da8;
+  $text-font: 13px;
+  $active-text-color: #fff;
+  background-color: $bg-1-u;
+  ul {
+    background-color: $bg-1-u;
+    li {
+      .title {
+        padding-left: $pgl-1-a
+      }
+      ul {
+        background-color: $bg-2-u;
+        li {
+          .title {
+            padding-left: $pgl-2-a
+          }
+          ul {
+            background-color: $bg-3-u;
+            li {
+              .title {
+                padding-left: $pgl-3-a
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .main-menu {
+    border-bottom: 1px solid #37414b;
+    > li {
+      &.active > .title, > .title:hover {
+        background-color: transparent;
+      }
+      border-top: 1px solid #37414b;
+      border-bottom: 1px solid #1f262d;
+    }
+    li {
+      position: relative;
+      .title {
+        @include transition(.3s);
+        position: relative;
+        display: block;
+        cursor: pointer;
+        color: $text-color;
+        line-height: $li-h;
+        font-size: $text-font;
+        &:before {
+          @include glyphicon();
+          content: '\e127';
+          margin-right: 5px;
+        }
+        span {
+          line-height: $li-h;
+          font-size: $text-font;
+        }
+      }
+      &.active .title, .title:hover, .title:active {
+        background-color: rgb(40, 183, 121);
+        color: $active-text-color;
+      }
+      ul {
+        height: 0;
+        @include transition(.3s);
+        overflow: hidden
+      }
+      &.unfold > ul {
+        height: auto;
+      }
+    }
+    .item-menu {
+      > .title {
+        &:before {  content: '\e012'; }
+      }
+      &.unfold > .title::before{ content: '\e140';}
+    }
+  }
+}
+
+@mixin g-mainnav() {
+
+  @include transition(.3s);
+  height: calc(100% - #{$g-topnav-h});
+  position: fixed;
+  top: $g-topnav-h;
+  left: 0;
+  z-index: ($zindex-navbar - 1);
+  width: $g-mainnav-w;
+  &.switch-mainnav {
+    left: -$g-mainnav-w;
+  }
+
+  @include u-mainnav();
+}
+
+@mixin g-topnav() {
+  $bg-c: #1f262d;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: $zindex-navbar;
+  width: 100%;
+  height: $g-topnav-h;
+  background-color: $bg-c;
+  @include transition(.3s);
+  $text-color: #fff;
+  .brand-box {
+    a {
+      float: left;
+      padding: 0 15px;
+      font-size: 18px;
+      line-height: $g-topnav-h;
+      height: $g-topnav-h;
+      color: $text-color;
+      & {
+        &:before {
+          @include glyphicon();
+          content: '\e236';
+          display: inline-block;
+          position: relative;
+          margin-right: 5px;
+          font-size: 18px;
+          line-height: $g-topnav-h;
+          color: #fff;
+          right: 0;
+          top: 3px;
+          text-align: center;
+        }
+      }
+    }
+  }
+  .nav-box {
+    .switch-menu {
+      display: none;
+    }
+  }
+  .top-menu {
+    font-size: 0;
+    float: right;
+    border-left: 1px solid #000;
+    > li {
+      display: inline-block;
+      height: $g-topnav-h;
+      border-left: 1px solid #2e363f;
+      border-right: 1px solid #000;
+      &:hover {
+        background-color: #000;
+      }
+      .dropdown-toggle,
+      > a {
+        padding: 15px;
+        font-size: 12px;
+        line-height: $g-topnav-h;
+        color: $text-color;
+        cursor: pointer;
+      }
+      > a {
+        .glyphicon::before {
+          margin-right: 4px
+        }
+      ;
+      }
+    }
+  }
+}
+
+@mixin g-nav() {
+  > .topnav {
+    @include g-topnav();
+  }
+  > .mainnav {
+    @include g-mainnav();
+  }
+}
+
+@mixin g-content() {
+  @include transition(.3s);
+  height: calc(100% - #{$g-topnav-h});
+  overflow: auto;
+  margin-top: $g-topnav-h;
+  &.fullshow {
+    width: 100%;
+    height: 100%;
+    margin-left: 0;
+    margin-top: 0;
+  }
+  width: calc(100% - #{$g-mainnav-w});
+  margin-left: $g-mainnav-w;
+  &.hide-nav {
+    width: 100%;
+    margin-left: 0;
+  }
+  .m-view {
+    padding: 20px;
+  }
+}

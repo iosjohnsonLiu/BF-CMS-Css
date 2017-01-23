@@ -1,0 +1,102 @@
+@mixin login-view(){
+  background-color: #2E363F;
+
+  @include square(100%);
+  @include displayFlex();
+  @include justifyContentCenter();
+  @include alignItemsCenter();
+  .login-model{
+    width: 360px;
+    padding: 10px 15px;
+    position: relative;
+  }
+  .login-title{
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    display: block;
+    line-height: 40px;
+    padding:{
+      top: 20px;
+      bottom: 10px;
+    }
+    border-top: 1px solid #3f4954;
+    color: #fff;
+  }
+  $box-w:85%;
+  .input-box{
+    width: $box-w;
+    margin: auto {
+      top: 30px;
+    }
+
+    @include displayFlex();
+    .hint{
+      width: 50px;
+      text-align: center;
+      line-height: 38px;
+      font-size: 16px;
+      &:before{
+        @include glyphicon();
+        color: #fff;
+      }
+      &.user{
+        background-color: #28b779;
+        &:before{content: '\e008'}
+      }
+      &.password{
+        background-color: #ffb848;
+        &:before{content: '\e033'}
+      }
+    }
+    input{
+      @include flex(1);
+      padding: 6px 12px;
+      line-height: 26px;
+      font-size: 16px;
+    }
+  }
+  .message-box{
+    position: absolute;
+    height: 40px;
+    width: $box-w;
+    bottom: 70px;
+    left: ((100% - $box-w)/2);
+    text-align: center;
+    @include displayFlex();
+    @include justifyContentCenter();
+    @include alignItemsCenter();
+    span{
+      font-size: 13px;
+    }
+    .error{
+      color: $brand-danger;;
+    }
+    .text{
+      color: $brand-warning;
+    }
+  }
+  .btn-box{
+    margin-top: 65px;
+    padding-top: 15px;
+    border-top: 1px solid #3f4954;
+    text-align: center;
+    .btn-submit{
+      min-width: 90px;
+      cursor: pointer;
+      color: #fff;
+      text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
+      background-color: #5bb75b;
+      border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);
+      display: inline-block;
+      padding: 6px 12px;
+      margin-bottom: 0;
+      font-size: 14px;
+      line-height: 20px;
+      &:hover{
+        background-color: #51a351;
+      }
+    }
+  }
+
+}

@@ -1,0 +1,219 @@
+@mixin addon-length($length) {
+  $default-w: 25px;
+  $font-size: 14px;
+  .input-group-addon {
+    min-width: ($default-w + $font-size * $length);
+  }
+  .textarea-box {
+    .title {
+      min-width: ($default-w + $font-size * $length);
+    }
+  }
+}
+
+
+@mixin detail-info(){
+
+  //border: 1px solid #ccc;
+  @include displayFlex();
+  @include flexDirectionRow();
+  @include flexWrapWrap();
+
+  >.left-view,>.right-view{
+    padding: 6px 12px;
+    @include flex(1);
+  }
+  >.left-view{
+    max-width: 600px;
+  }
+  >.right-view{
+    //max-width: 800px;
+  }
+  .u-upload-image{
+    //max-width: 500px;
+  }
+  .form-group{
+    margin: 0;
+    .input-group-dropdown{
+      >.input-group{width: 100%;
+        .form-control{
+          border-radius: 0;
+        }
+        .input-group-btn{
+          position: static;
+        }
+        .dropdown{
+          position: static;
+          .dropdown-menu{
+            width: 100%;
+          }
+        }
+      }
+    }
+    >div+div{
+      border-top-style: none;
+      >*{
+        border-top-style: none;
+        //border-top-color: transparent;
+      }
+      .form-control{ &:focus{border-top-style: solid;} }
+      >.input-group-dropdown{
+        >.input-group {
+          >*{border-top-style: none;}
+          .form-control{ &:focus{border-top-style: solid;} }
+        }
+      }
+    }
+    >.input-group{
+      >*{
+        border-radius: 0;
+      }
+      display: inline-table;
+      vertical-align: middle;
+      .input-group-btn{
+        .dropdown-toggle{
+          height: 32px;
+          cursor: pointer;
+          font-size: 14px;
+          padding: 5px 12px;
+          line-height: 20px;
+          background-color: $btn-info-bg;
+          color: $btn-info-color;
+          border: 1px solid $btn-info-border;
+          border-left-style: none;
+          &:hover{
+            background-color: lighten($btn-info-bg,10%);
+            border-color:   lighten($btn-info-border,12%);
+          }
+        }
+      }
+      .input-group-addon{
+        font-size: $theme-detail-title-size;
+        background-color: $theme-header-color;
+        text-align: justify;
+        text-align-last: justify;
+        &.text-hint{
+          font-size: 12px;
+          color: $brand-danger;
+          min-width: 32px !important;
+        }
+      }
+      .form-control{
+        font-size: $font-size-h6;
+        height: 32px;
+      }
+      >.form-control{
+        width: 100%;
+      }
+    }
+    > .input-group, > fieldset > .input-group {
+      &.not-null {
+        &:after {
+          content: "*";
+          display: block;
+          position: absolute;
+          color: #fa0000;
+          font-size: 24px;
+          height: 24px;
+          right: 100%;
+          top: 50%;
+          margin-top: -12px;
+          margin-right: 2px;
+        }
+      }
+    }
+    .remark-textarea{
+      min-height: 120px;
+    }
+  }
+
+
+  >.title-box {
+    width: 100%;
+    position: relative;
+    border-bottom: 1px solid $table-border-color;
+    //background-color: $theme-table-thead-color;
+    @include clearfix();
+    .title {
+      padding: 0 12px;
+      color: $theme-table-title-font-color;
+      font-size: $theme-table-title-font-size;
+      line-height: $theme-header-height;
+      &:before{
+        content: ' ';
+        display: block;
+        position: absolute;
+        top: 10px;
+        left: 3px;
+        height: 20px;
+        width: 2px;
+        background-color: #00b3ee;
+      }
+    }
+    .btn-group,
+    .save-and-cancel {
+      float: right;
+      margin-top: 4px;
+      margin-right: 4px;
+      position: relative;
+    }
+    .save-and-cancel::before{
+      $or-size:20px;
+      content: 'or';
+      display: block;
+      @include square($or-size);
+      background-color: #fff;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-left: -($or-size /2);
+      margin-top: -($or-size /2);
+      border-radius: 50%;
+      line-height: $or-size;
+      text-align: center;
+      border: 1px solid $theme-table-border-color;
+      color: #999;
+
+    }
+    .btn{
+      font-family: $font-family-serif;
+      border-radius: 0;
+      font-size: $font-size-h5;
+      line-height: 18px;
+      padding: 5px 18px;
+      border-color: transparent;
+      &.save{
+        @include border-left-radius(4px);
+        color: #fff;
+        background-color:$btn-primary-bg;
+        &:hover{
+          background-color: lighten($btn-primary-bg, 10%);
+        }
+      }
+      &.cancel{
+        @include border-right-radius(4px);
+        background-color:#E8E8E8;
+        &:hover{
+          background-color: lighten(#E8E8E8, 10%);
+        }
+        color: #666;
+      }
+      &.back{
+        border-radius: 4px;
+        color: #666;
+        background-color:#E8E8E8;
+        border: 1px solid #ccc;
+        &:hover{
+          background-color: lighten(#E8E8E8, 10%);
+          border-color: lighten(#ccc, 10%);
+        }
+      }
+    }
+  }
+  .addon-length-6 { @include addon-length(6); }
+  .addon-length-5 { @include addon-length(5); }
+  .addon-length-4 { @include addon-length(4); }
+  .addon-length-3 { @include addon-length(3); }
+  .addon-length-2 { @include addon-length(2); }
+}
+

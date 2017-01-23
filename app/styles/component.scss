@@ -1,0 +1,19 @@
+@import "component/nav";   //导航
+@import "component/load";  //加载动画
+@import "component/table"; //列表
+@import "component/modal"; //弹出框
+@import "component/upload-image"; //图片上传
+@import "component/upload-video"; //视频上传
+@import "component/u-meum";     //菜品组件
+.g-nav { @include g-nav();}
+.g-content{ @include g-content();}
+
+//加载动画
+.u-load{@include  u-load();}
+
+//列表
+.u-table{@include u-table();}
+//分页
+.u-page-box{@include u-page-box();}
+//弹出框
+.modal{@include modal();}

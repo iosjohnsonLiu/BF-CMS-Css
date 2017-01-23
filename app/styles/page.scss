@@ -1,0 +1,36 @@
+@import "page/login-page";
+@import "page/detail-info-page";
+//登录
+.m-login{
+  @include login-view();
+}
+//欢迎页
+.m-welcome{
+  height: 100%;
+  background-color: $theme-bg-color;
+  padding: 0;
+  .welcome-box{
+    height: 100%;
+    @include displayFlex();
+    @include justifyContentCenter();
+    @include alignItemsCenter();
+  }
+  .welcome-text{
+    text-align: center;
+    span,strong{
+      font-size: $font-size-h1;
+      line-height: 60px;
+      font-family: $font-family-monospace;
+      font-weight: bold;
+    }
+    strong{
+      color: #f0ad4e;
+      font-size: 44px;
+    }
+  }
+}
+
+//通用详情界面模块
+.u-detail-info{
+ @include  detail-info();
+}

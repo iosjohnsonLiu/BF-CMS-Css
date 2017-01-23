@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+  <title>CMS系统</title>
+  <!-- Bootstrap -->
+
+  <link href="./styles/app.css" rel="stylesheet">
+</head>
+
+<body>
+<div id="root" class="adaption-auto">
+  <div class="g-nav">
+    <div class="topnav"></div>
+    <div class="mainnav"></div>
+  </div>
+  <div class="g-content ">
+    <div class="m-view">
+      <div class="u-table">
+        <div class="title-box">
+          <span class="title">道具列表</span>
+          <div class="btn-group">
+            <div class="btn btn-default update">刷新</div>
+            <div class="btn btn-primary" data-toggle="modal" data-target="#newModel">创建</div>
+          </div>
+        </div>
+        <div class="sift-box">
+          <div class="input-group">
+            <div class="input-group-addon"><span>用户名称</span></div>
+            <input type="text" class="form-control" placeholder="请输入筛选条件" value="">
+          </div>
+          <div class="input-group">
+            <div class="input-group-addon"><span>用户名称</span></div>
+            <input type="text" class="form-control" placeholder="请输入筛选条件" value="">
+          </div>
+          <div class="input-group">
+            <div class="input-group-addon"><span>用户名称</span></div>
+            <input type="text" class="form-control" placeholder="请输入筛选条件" value="">
+          </div>
+          <div class="btn btn-primary search">搜索</div>
+        </div>
+        <table>
+          <thead>
+          <tr>
+            <th>道具编码</th>
+            <th>
+              <div class="dropdown">
+                <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">
+                  <i class="glyphicon glyphicon-map-marker"></i>
+                  <span>重庆</span>
+                  <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu ">
+                  <li class="active"><a href="javascript:void(0)">重庆</a></li>
+                  <li><a href="javascript:void(0)">成都</a></li>
+                  <li><a href="javascript:void(0)">杭州</a></li>
+                </ul>
+              </div>
+            </th>
+            <th>道具数量</th>
+            <th>道具描述</th>
+            <th>道具图片</th>
+            <th class="text-right">操作</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>F0484</td>
+            <td>重庆</td>
+            <!--设置最多宽度-->
+            <td class="input-col" style="max-width: 80px"><input type="number" value="10"/></td>
+            <td>描述描述描述描述</td>
+            <td class="photo-col">
+              <div class="photo-box">
+                <div class="image-box">
+                  <div class="u-load ">
+                    <div class="load-box">
+                      <div class="load-img">
+                        <i></i>
+                        <i></i>
+                        <i></i>
+                        <i></i>
+                        <i></i>
+                        <i></i>
+                      </div>
+                    </div>
+                  </div>
+                  <img id="preview-img" src="http://img0.imgtn.bdimg.com/it/u=4090961411,3003362963&fm=21&gp=0.jpg" alt="">
+                </div>
+              </div>
+            </td>
+            <td>
+              <!-- 公共组件 -->
+              <div class="dropdown">
+                <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">
+                  <i class="glyphicon glyphicon-map-marker"></i>
+                  <span>更多</span>
+                  <span class="caret"></span>
+                </a>
+                <!--向dropdown对其方向 dropdown-menu-left 向左对其  dropdown-menu-right 对其扩展-->
+                <ul class="dropdown-menu dropdown-menu-right">
+                  <li class="active"><a href="javascript:void(0)">重庆</a></li>
+                  <li><a href="javascript:void(0)">成都</a></li>
+                  <li><a href="javascript:void(0)">杭州</a></li>
+                </ul>
+              </div>
+              <!-- --- -->
+            </td>
+          </tr>
+          <tr>
+            <td>F0484</td>
+            <td>重庆</td>
+            <!--设置最多宽度-->
+            <td class="input-col" style="max-width: 80px"><input type="number" value="10"/></td>
+            <td>描述描述描述描述</td>
+            <td class="photo-col">
+              <div class="photo-box">
+                <div class="image-box">
+                  <div class="u-load ">
+                    <div class="load-box">
+                      <div class="load-img">
+                        <i></i>
+                        <i></i>
+                        <i></i>
+                        <i></i>
+                        <i></i>
+                        <i></i>
+                      </div>
+                    </div>
+                  </div>
+                  <img id="preview-img" src="http://img0.imgtn.bdimg.com/it/u=4090961411,3003362963&fm=21&gp=0.jpg" alt="">
+                </div>
+              </div>
+            </td>
+            <td>
+              <ul class="ctl-list">
+                <li><a class="link" href="javascript:void(0)">连接</a></li>
+                <li><span class="td-btn detail">详情</span></li>
+                <li><span class="td-btn modify">修改</span></li>
+                <li><span class="td-btn delete">删除</span></li>
+                <li><span class="td-btn warning">危险操作</span></li>
+                <li>
+                  <div class="dropdown">
+                    <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">
+                      <i class="glyphicon glyphicon-map-marker"></i>
+                      <span>更多</span>
+                      <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-right">
+                      <li class="active"><a href="javascript:void(0)">重庆</a></li>
+                      <li><a href="javascript:void(0)">成都</a></li>
+                      <li class="divider"></li>
+                      <li><a href="javascript:void(0)">杭州</a></li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+            </td>
+          </tr>
+          </tbody>
+          <tfoot>
+          <tr>
+            <td colspan="6" class="u-page-box">
+              <div class="page-box">
+                <div class="page-text">共10页,当前第5页</div>
+                <ul class="pagination">
+                  <li class="disabled"><span class="page-number glyphicon glyphicon-fast-backward"></span></li>
+                  <li class="disabled"><span class="page-number glyphicon glyphicon-backward"></span></li>
+                  <li class="active"><span class="page-number">1</span></li>
+                  <li><span class="page-number">2</span></li>
+                  <li><span class="page-number">3</span></li>
+                  <li><span class="page-number glyphicon glyphicon-forward"></span></li>
+                  <li><span class="page-number glyphicon glyphicon-fast-forward"></span></li>
+                </ul>
+              </div>
+            </td>
+          </tr>
+          </tfoot>
+        </table>
+      </div>
+
+      <!--u-load fixed overspread  (fixed 全屏模式  overspread 弹出框模式)">-->
+      <!--<div class="u-load fixed">-->
+        <!--<div class="load-box">-->
+          <!--<div class="load-img">-->
+            <!--<i></i>-->
+            <!--<i></i>-->
+            <!--<i></i>-->
+            <!--<i></i>-->
+            <!--<i></i>-->
+            <!--<i></i>-->
+          <!--</div>-->
+          <!--&lt;!&ndash;load-title 加上 center 在fixed下字体显示在加载动画中间&ndash;&gt;-->
+          <!--<div class="load-title center">加载中..</div>-->
+        <!--</div>-->
+      <!--</div>-->
+
+      <div class="modal fade bs-example-modal-sm " id="newModel">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              </button>
+              <h4 class="modal-title">物料单位删除</h4></div>
+            <div class="modal-body">
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+              <button type="button" class="btn btn-primary">保存</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade bs-example-modal-sm " id="newModel2">
+        <div class="modal-dialog modal-sm">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              </button>
+              <h4 class="modal-title">物料单位删除</h4></div>
+            <div class="modal-body">
+              <span class="text-content">删除记录成功</span>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+              <button type="button" class="btn btn-primary">保存</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://cdn.bootcss.com/flexie/1.0.3/flexie.min.js"></script>
+<script src="./scripts/bootstrap.min.js"></script>
+<script src="./scripts/readydefault.js"></script>
+<script type="application/javascript">
+</script>
+</body>
+</html>
