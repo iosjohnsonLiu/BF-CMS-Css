@@ -63,23 +63,18 @@
     }
   }
   .modal-footer {
-    //background-color: $default-bg;
     @include border-bottom-radius(4px);
     overflow: hidden;
     position: relative;
-    padding: 6px;
-    //.error-hint, .use-hint {
-    //  display: block;
-    //  text-align: left;
-    //  line-height: 20px;
-    //  font-size: 14px;
-    //}
-    //.error-hint {
-    //  color: $brand-danger;
-    //}
-    //.use-hint {
-    //  color: $brand-primary;
-    //}
+    padding: 6px 10px;
+    @include displayFlex();
+    @include justifyContentFlexEnd();
+    @include alignItemsCenter();
+    .text-error{
+      margin: auto{
+        left: 0;
+      };
+    }
     .btn{
       padding: 6px 8px;
       font-size: 12px;
@@ -97,4 +92,25 @@
     line-height: 20px;
     color: #db2c2c;
   }
+  .form-group{
+
+    margin: 0 10px;
+    .input-group{
+      &.not-null {
+        &:after {
+          content: "*";
+          display: block;
+          position: absolute;
+          color: #fa0000;
+          font-size: 24px;
+          height: 24px;
+          right: 100%;
+          top: 50%;
+          margin-top: -12px;
+          margin-right: 2px;
+        }
+      }
+    }
+  }
+
 }

@@ -1,0 +1,126 @@
+.form-group{
+
+}
+//.input-group >.input-group-dropdown,
+.input-group-dropdown{
+  position: relative;
+  >.input-group{width: 100%;
+    .form-control{
+      border-radius: 0;
+    }
+    .input-group-btn{
+      position: static;
+    }
+
+  }
+  .dropdown{
+    position: static;
+    .dropdown-menu{
+      width: 100%;
+    }
+  }
+  &.dropdown-btn{
+    cursor: pointer;
+    &.disabled{
+      cursor: not-allowed;
+      .dropdown{
+        background-color: #eee;
+      }
+    }
+    .dropdown {
+      font-size: 12px;
+      height: 32px;
+      line-height: 18px;
+      padding: 6px 12px;
+      color: #555555;
+      background-color: #fff;
+      background-image: none;
+      border: 1px solid #E1E6EB;
+      .dropdown-toggle{
+        @include displayFlex();
+        @include justifyContentSpaceBetween();
+        @include alignItemsCenter();
+      }
+    }
+  }
+}
+
+.dropdown-menu{
+  cursor: default;
+  overflow-y: auto;
+  overflow-x: hidden;
+  .search-box{
+    padding: 3px 6px;
+    margin-bottom: 2px;
+    position: relative;
+    .btn-search{
+      cursor: pointer;
+      color: #555;
+      @include  displayFlex();
+      @include alignItemsCenter();
+      @include justifyContentCenter();
+      width: 40px;
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      font-size: 14px;
+      z-index: 10;
+      text-align: center;
+      &::before{
+        @include  glyphicon();
+        content: "\e003";
+      }
+    }
+    >input{
+      border: 1px solid $input-border;
+      padding: 6px 12px;
+      padding-right: 40px;
+      font-size: $font-size-h6;
+      width: 100%;
+      color: #555;
+      &:focus{
+        border-color: $brand-primary;
+      }
+    }
+  }
+  .load-more-box{
+    text-align: center;
+    border-top: 1px solid #eee;
+    padding: 2px;
+    padding-top: 7px;
+    .load-hint{
+      cursor: pointer;
+      padding: 0 12px;
+      color: $brand-primary;
+      font-size: $font-size-h6;
+      display: inline-block;
+      &.complete{
+        cursor: not-allowed;
+        color: #aaa;
+      }
+      &.error{
+        color: $brand-danger;
+      }
+    }
+  }
+}
+
+@mixin addon-length($length) {
+  $default-w: 25px;
+  $font-size: 14px;
+  .input-group-addon {
+    min-width: ($default-w + $font-size * $length);
+  }
+  .textarea-box {
+    .title {
+      min-width: ($default-w + $font-size * $length);
+    }
+  }
+}
+
+.addon-length-6 { @include addon-length(6); }
+.addon-length-5 { @include addon-length(5); }
+.addon-length-4 { @include addon-length(4); }
+.addon-length-3 { @include addon-length(3); }
+.addon-length-2 { @include addon-length(2); }

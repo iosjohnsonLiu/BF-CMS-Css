@@ -3,7 +3,7 @@ $(document).ready(function () {
   });
   insertMainnav();
   insertToNav();
-  //insertToContent();
+  insertToContent();
   barcode();
 
   if ($(".g-nav >.mainnav").length > 0) {
@@ -127,7 +127,7 @@ function insertToNav() {
       "        </ul>" +
       "       </div>" +
       "     </li>"+
-        //"     <li><a href='javascript:(0)' data-toggle='modal' data-target='#modPasswd'>修改密码</a></li>" +
+       "     <li><a href='javascript:(0)' data-toggle='modal' data-target='#modPasswd'><i class='glyphicon glyphicon-edit'></i><span >修改密码</span></a></li>" +
       "     <li><a href='index.html' ><i class='glyphicon glyphicon-log-out'></i><span >退出</span></a></li>" +
       "   </ul>" +
       " </div>";
@@ -141,8 +141,8 @@ function insertToContent() {
     var insertToContent;
     var modPasswd =
       "<div class='modal fade bs-example-modal-sm ' id='modPasswd' tabindex='-1' role='dialog'>" +
-      "<div class='modal-dialog ' role='document'>" +
-      "<div class='modal-content'>" +
+      "<div class='modal-dialog modal-md-sm' role='document'>" +
+      "<div class='modal-content '>" +
       "<div class='modal-header'>" +
       "   <button type='button' class='close' data-dismiss='modal' aria-label='Close'>" +
       "     <span aria-hidden='true'>&times;</span>" +
@@ -151,15 +151,15 @@ function insertToContent() {
       "</div>" +
       "<div class='modal-body'>" +
       "<div class='form-group'>" +
-      "<div class='input-group '>" +
+      "<div class='input-group not-null'>" +
       "<div class='input-group-addon'>原密码</div>" +
       "<input type='password' class='form-control ' placeholder='请输入原密码'>" +
       "</div>" +
-      "<div class='input-group '>" +
+      "<div class='input-group not-null'>" +
       "<div class='input-group-addon'>新密码</div>" +
       "<input type='password' class='form-control ' placeholder='请输入新密码'>" +
       "</div>" +
-      "<div class='input-group '>" +
+      "<div class='input-group not-null'>" +
       "<div class='input-group-addon'>新密码</div>" +
       "<input type='password' class='form-control ' placeholder='请输入新密码'>" +
       "</div>" +

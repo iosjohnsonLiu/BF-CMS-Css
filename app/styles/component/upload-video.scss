@@ -129,17 +129,24 @@
         .error-hint{
           background-color: rgba(#000,0.7);
           cursor: pointer;
-          &::before {
-            @include glyphicon();
-            //top: 0;
-            content: '\e030';
-            margin-right: 2px;
-          }
           text-align: center;
           padding: 8px 12px;
           line-height: 14px;
           color: $brand-danger;
           &:hover{color: darken($brand-danger,7%);}
+
+          &.retry::before {
+            @include glyphicon();
+            //top: 0;
+            content: '\e030';
+            margin-right: 2px;
+          }
+          &.save::before {
+            @include glyphicon();
+            //top: 0;
+            content: '\2601';
+            margin-right: 2px;
+          }
         }
       }
     }
@@ -229,15 +236,15 @@
       line-height: 32px;
     }
   }
-  .photo-box {
-    position: relative;
-    @include displayFlex();
-    @include justifyContentCenter();
-    @include alignItemsCenter();
-    height: auto;
-    img {
-      @include max-square(100%);
-      @include square(auto);
-    }
-  }
+  //.photo-box {
+  //  position: relative;
+  //  @include displayFlex();
+  //  @include justifyContentCenter();
+  //  @include alignItemsCenter();
+  //  height: auto;
+  //  img {
+  //    @include max-square(100%);
+  //    @include square(auto);
+  //  }
+  //}
 }

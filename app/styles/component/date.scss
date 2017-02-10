@@ -1,0 +1,170 @@
+//日历
+@mixin datepicker() {
+  $select-font-color: #fff;
+  $select-backgroundColor: #ff3e3e;
+  $today-font-color: #fff;
+  $today-backgroundColor: #FF9A99;
+  $default-font-color: #000;
+  $default-font-size: 12px;
+  $group-space: 1rem;
+  font-size: 12px;
+  height: 0;
+  min-height: 200px;
+  .datepicker {
+    & {
+      height: 100%;
+      background: #F9F9F9;
+      border: 1px solid #dddddd;
+      border-radius: 6px;
+      overflow: hidden;
+    }
+    .datepicker-group {
+      width: 100%;
+      height: 100%;
+      .datepicker-header {
+        //日历标题
+        position: relative;
+        padding-right: 40px;
+        padding-left: 40px;
+        height: 18%;
+        .left-btn-box {
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 40px;
+          height: 100%;
+          .icon-left-btn {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: -10px;
+            margin-top: -10px;
+            &:before {
+              @include glyphicon();
+              font-size: 16px;
+              line-height: 20px;
+              content: "\e132";
+            }
+          }
+          &:active, &:hover {
+            .icon-left-btn:before {
+              color: $select-backgroundColor;
+            }
+          }
+        }
+        .right-btn-box {
+          position: absolute;
+          right: 0;
+          top: 0;
+          width: 40px;
+          height: 100%;
+          .icon-right-btn {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: -10px;
+            margin-top: -10px;
+            &:before {
+              @include glyphicon();
+              font-size: 16px;
+              line-height: 20px;
+              content: "\e131";
+            }
+
+          }
+          &:active, &:hover {
+            .icon-right-btn:before {
+              color: $select-backgroundColor;
+            }
+          }
+        }
+        .date-title-box {
+          height: 100%;
+          @include displayFlex();
+          @include justifyContentCenter();
+          @include alignItemsCenter();
+          text-align: center;
+          .date-year {
+          }
+          .date-month {
+          }
+        }
+      }
+      //日历展示
+      table.datepicker-calendar {
+        border-collapse: collapse;
+        border-top: 1px solid #fff;
+        background-color: #fff;
+        text-align: center;
+        width: 100%;
+        height: 82%;
+        thead {
+          background: #F7F7F7;
+          tr {
+            th {
+              height: 30px;
+              span {
+                padding: 5px;
+                font-size: 14px;
+              }
+              &.rest-date {
+                span {
+                  color: red;
+                }
+              }
+              &.work-date {
+              }
+            }
+          }
+
+        }
+        tbody {
+          height: 75%;
+          tr {
+            td {
+              //height: 20px;
+              span {
+                color: $default-font-color;
+                font-size: $default-font-size;
+                display: block;
+              }
+              &.before-day-number {
+                span {
+                  color: #cacaca;
+                  font-weight: 100;
+                }
+              }
+              &.day-number {
+                cursor: pointer;
+                &.state-today {
+                  background-color: $today-backgroundColor;
+                  span {
+                    color: $today-font-color;
+                  }
+                }
+                &.state-select, &:active, &:hover {
+                  background-color: $select-backgroundColor;
+                  span {
+                    color: $select-font-color;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.u-datepicker-box{
+  @include datepicker();
+}
+.dropdown-date {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 2px;
+  width: 100%;
+  z-index: $zindex-tooltip;
+}

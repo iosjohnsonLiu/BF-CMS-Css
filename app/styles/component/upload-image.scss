@@ -18,7 +18,7 @@
     .title {
       padding: 0 12px;
       color: $theme-table-title-font-color;
-      font-size: $theme-detail-title-size;
+      font-size: $font-size-h6;
       line-height: 32px;
     }
     //.upload-btn,
@@ -186,12 +186,12 @@
     }
   }
   .photo-box {
-    position: relative;
-    height: auto;
-    img {
-      @include max-square(100%);
-      @include square(auto);
-    }
+    //position: relative;
+    //height: auto;
+    //img {
+    //  @include max-square(100%);
+    //  @include square(auto);
+    //}
     .load-img {
       font-size: 18px;
     }
@@ -204,13 +204,18 @@
   @include justifyContentCenter();
   @include alignItemsCenter();
   img {
-    position: relative;
+    position: inherit;
     z-index: 10;
+    @include max-square(100%);
+    @include square(auto);
   }
   .u-load {
     z-index: 1;
   }
-  .image-box{
+  //.image-box,
+  .img-box{
+    position: absolute;
+    @include square(100%);
     @include displayFlex();
     @include justifyContentCenter();
     @include alignItemsCenter();

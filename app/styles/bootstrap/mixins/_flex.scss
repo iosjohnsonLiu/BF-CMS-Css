@@ -36,6 +36,7 @@
 @mixin justifyContentSpaceAround(){
   -webkit-justify-content: space-around;
   justify-content: space-around;
+  -ms-flex-pack:distribute;
 }
 //-----------justifyContent--------end//
 
