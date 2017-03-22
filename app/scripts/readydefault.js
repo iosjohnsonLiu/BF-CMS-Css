@@ -84,6 +84,9 @@ function insertMainnav() {
       "   <li class=' '>" +
       "     <a class='title' href='detail-view.html'><span>详情</span></a>" +
       "   </li>" +
+      "   <li class=' '>" +
+      "     <a class='title' href='info-detail.html'><span>信息详情</span></a>" +
+      "   </li>" +
       "  </ul>" +
       " </li>" +
       "</ul>";

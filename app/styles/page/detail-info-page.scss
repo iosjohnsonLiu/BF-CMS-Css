@@ -85,7 +85,6 @@
         &.text-hint{
           font-size: 12px;
           color: $brand-danger;
-          min-width: 32px !important;
         }
       }
       .form-control{
@@ -130,7 +129,6 @@
     }
 
   }
-
   >.title-box {
     width: 100%;
     position: relative;
@@ -210,6 +208,22 @@
           background-color: lighten(#E8E8E8, 10%);
           border-color: lighten(#ccc, 10%);
         }
+      }
+    }
+  }
+  .u-text-list{
+    margin: 10px 0;
+    li{
+      display: inline-block;
+      padding: 6px 12px;
+      min-width: 120px;
+      .title{
+        font-size: 12px;
+        color: #999;
+      }
+      .value{
+        font-size: 14px;
+        color: #555;
       }
     }
   }

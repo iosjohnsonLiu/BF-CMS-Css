@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+  <title>CMS系统</title>
+  <!-- Bootstrap -->
+
+  <link href="./styles/app.min.css" rel="stylesheet">
+</head>
+
+<body>
+<div id="root" class="adaption-auto">
+  <div class="g-nav">
+    <div class="topnav"></div>
+    <div class="mainnav"></div>
+  </div>
+
+  <div class="g-content ">
+    <div class="m-view">
+      <div class="u-detail-info">
+        <div class="title-box">
+          <span class="title">门店详情</span>
+          <div class="btn-group">
+            <div class="btn back">返回</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <ul class="u-text-list">
+              <li>
+                <span class="title">方案id:</span>
+                <span class="value">123456</span>
+              </li>
+              <li>
+                <span class="title">方案id:</span>
+                <span class="value">123456</span>
+              </li>
+              <li>
+                <span class="title">方案id:</span>
+                <span class="value">123456</span>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-6">
+            <div class="u-table" style="margin-bottom: 20px">
+              <div class="title-box">
+                <span class="title">道具列表</span>
+                <div class="btn-group">
+                  <div class="btn btn-default update">刷新</div>
+                  <div class="btn btn-primary" data-toggle="modal" data-target="#newModel">创建</div>
+                </div>
+              </div>
+              <table>
+                <thead>
+                <tr>
+                  <th>道具编码</th>
+                  <th>
+                    <div class="dropdown">
+                      <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">
+                        <i class="glyphicon glyphicon-map-marker"></i>
+                        <span>重庆</span>
+                        <span class="caret"></span>
+                      </a>
+                      <ul class="dropdown-menu ">
+                        <li class="active"><a href="javascript:void(0)">重庆</a></li>
+                        <li><a href="javascript:void(0)">成都</a></li>
+                        <li><a href="javascript:void(0)">杭州</a></li>
+                      </ul>
+                    </div>
+                  </th>
+                  <th>道具数量</th>
+                  <th>道具描述</th>
+                  <th class="text-right">操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                  <td>F0484</td>
+                  <td>重庆</td>
+                  <!--设置最多宽度-->
+                  <td class="input-col" style="max-width: 80px"><input type="number" value="10"/></td>
+                  <td>描述描述描述描述</td>
+                  <td>
+                    <!-- 公共组件 -->
+                    <div class="dropdown">
+                      <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">
+                        <i class="glyphicon glyphicon-map-marker"></i>
+                        <span>更多</span>
+                        <span class="caret"></span>
+                      </a>
+                      <!--向dropdown对其方向 dropdown-menu-left 向左对其  dropdown-menu-right 对其扩展-->
+                      <ul class="dropdown-menu dropdown-menu-right">
+                        <li class="active"><a href="javascript:void(0)">重庆</a></li>
+                        <li><a href="javascript:void(0)">成都</a></li>
+                        <li><a href="javascript:void(0)">杭州</a></li>
+                      </ul>
+                    </div>
+                    <!-- --- -->
+                  </td>
+                </tr>
+                <tr>
+                  <td>F0484</td>
+                  <td>重庆</td>
+                  <!--设置最多宽度-->
+                  <td class="input-col" style="max-width: 80px"><input type="number" value="10"/></td>
+                  <td>描述描述描述描述</td>
+                  <td>
+                    <ul class="ctl-list">
+                      <li><a class="link" href="javascript:void(0)">连接</a></li>
+                      <li><span class="td-btn detail">详情</span></li>
+                      <li><span class="td-btn modify">修改</span></li>
+                      <li><span class="td-btn delete">删除</span></li>
+                      <li><span class="td-btn warning">危险操作</span></li>
+                      <li>
+                        <div class="dropdown">
+                          <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="glyphicon glyphicon-map-marker"></i>
+                            <span>更多</span>
+                            <span class="caret"></span>
+                          </a>
+                          <ul class="dropdown-menu dropdown-menu-right">
+                            <li class="active"><a href="javascript:void(0)">重庆</a></li>
+                            <li><a href="javascript:void(0)">成都</a></li>
+                            <li class="divider"></li>
+                            <li><a href="javascript:void(0)">杭州</a></li>
+                          </ul>
+                        </div>
+                      </li>
+                    </ul>
+                  </td>
+                </tr>
+                </tbody>
+                <tfoot>
+                </tfoot>
+              </table>
+            </div>
+          </div>
+          <div class="col-md-6 ">
+            <div class="u-table" style="margin-bottom: 20px" >
+              <div class="title-box">
+                <span class="title">道具列表</span>
+                <div class="btn-group">
+                  <div class="btn btn-default update">刷新</div>
+                  <div class="btn btn-primary" data-toggle="modal" data-target="#newModel">创建</div>
+                </div>
+              </div>
+              <table>
+                <thead>
+                <tr>
+                  <th>道具编码</th>
+                  <th>
+                    <div class="dropdown">
+                      <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">
+                        <i class="glyphicon glyphicon-map-marker"></i>
+                        <span>重庆</span>
+                        <span class="caret"></span>
+                      </a>
+                      <ul class="dropdown-menu ">
+                        <li class="active"><a href="javascript:void(0)">重庆</a></li>
+                        <li><a href="javascript:void(0)">成都</a></li>
+                        <li><a href="javascript:void(0)">杭州</a></li>
+                      </ul>
+                    </div>
+                  </th>
+                  <th>道具数量</th>
+                  <th>道具描述</th>
+                  <th class="text-right">操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                  <td>F0484</td>
+                  <td>重庆</td>
+                  <!--设置最多宽度-->
+                  <td class="input-col" style="max-width: 80px"><input type="number" value="10"/></td>
+                  <td>描述描述描述描述</td>
+                  <td>
+                    <!-- 公共组件 -->
+                    <div class="dropdown">
+                      <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">
+                        <i class="glyphicon glyphicon-map-marker"></i>
+                        <span>更多</span>
+                        <span class="caret"></span>
+                      </a>
+                      <!--向dropdown对其方向 dropdown-menu-left 向左对其  dropdown-menu-right 对其扩展-->
+                      <ul class="dropdown-menu dropdown-menu-right">
+                        <li class="active"><a href="javascript:void(0)">重庆</a></li>
+                        <li><a href="javascript:void(0)">成都</a></li>
+                        <li><a href="javascript:void(0)">杭州</a></li>
+                      </ul>
+                    </div>
+                    <!-- --- -->
+                  </td>
+                </tr>
+                <tr>
+                  <td>F0484</td>
+                  <td>重庆</td>
+                  <!--设置最多宽度-->
+                  <td class="input-col" style="max-width: 80px"><input type="number" value="10"/></td>
+                  <td>描述描述描述描述</td>
+                  <td>
+                    <ul class="ctl-list">
+                      <li><a class="link" href="javascript:void(0)">连接</a></li>
+                      <li><span class="td-btn detail">详情</span></li>
+                      <li><span class="td-btn modify">修改</span></li>
+                      <li><span class="td-btn delete">删除</span></li>
+                      <li><span class="td-btn warning">危险操作</span></li>
+                      <li>
+                        <div class="dropdown">
+                          <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="glyphicon glyphicon-map-marker"></i>
+                            <span>更多</span>
+                            <span class="caret"></span>
+                          </a>
+                          <ul class="dropdown-menu dropdown-menu-right">
+                            <li class="active"><a href="javascript:void(0)">重庆</a></li>
+                            <li><a href="javascript:void(0)">成都</a></li>
+                            <li class="divider"></li>
+                            <li><a href="javascript:void(0)">杭州</a></li>
+                          </ul>
+                        </div>
+                      </li>
+                    </ul>
+                  </td>
+                </tr>
+                </tbody>
+                <tfoot>
+                </tfoot>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+<script src="./scripts/bootstrap.min.js"></script>
+<script src="./scripts/readydefault.js"></script>
+<script type="application/javascript">
+</script>
+</body>
+</html>
+<!--<li class="dropdown">-->
+<!--<a href="#" class="dropdown-toggle" data-toggle="dropdown">-->
+<!--<span>重庆</span><span class="caret"></span>-->
+<!--</a>-->
+<!--<ul class="dropdown-menu">-->
+<!--<li class="active"><a href="#">重庆</a></li>-->
+<!--<li ><a href="#">成都</a></li>-->
+<!--<li class="divider"></li>-->
+<!--<li ><a href="#">杭州</a></li>-->
+<!--</ul>-->
+<!--</li>-->

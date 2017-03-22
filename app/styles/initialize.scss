@@ -51,6 +51,7 @@ a:hover { text-decoration:none;}
 a:visited { text-decoration: none;}
 html{
   font-size: $font-size-h6;
+  word-wrap:break-word; word-break:normal;
 }
 html,body,.adaption-auto{
   width: 100%;

@@ -49,7 +49,7 @@
 //@import "bootstrap/scaffolding";
 @import "bootstrap/type";
 //@import "bootstrap/code";
-//@import "bootstrap/grid";
+@import "bootstrap/grid";
 //@import "bootstrap/tables";
 @import "bootstrap/forms";
 @import "bootstrap/buttons";
@@ -86,6 +86,5 @@
 // Utility classes
 //@import "bootstrap/utilities";
 //@import "bootstrap/responsive-utilities";
-
 
 @import "component/bootstrap-revision";//修正
